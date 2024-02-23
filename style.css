@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calc {
+    background-color: #8D918D;
+    height: 600px;
+    width: 400px;
+    border-radius: 25px;
+}
