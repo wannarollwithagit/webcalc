@@ -25,12 +25,32 @@ function operate(operator, a, b) {
         case '/':
             return divide(a, b);
         default:
-            return "OPERATOR ERROR";
+            return "ERROR";
     }
 }
 
-let num1 = 2;
-let num2 = 3;
-let operator = '/';
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('#display');
+let expression = []
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.id === 'clear') {
+            if (display.textContent) {
+                if (button.textContent === 'AC') {
+                    display.textContent = "";
+                    expression = [];
+                } else if (button.textContent === "CE") {
+                    display.textContent = display.textContent.slice(0, display.textContent.length - 1);
+                    expression.pop();
+                }
+            }
+        } else if (button.id === 'equals') {
+
+        } else {
+            expression.push(button.textContent);
+            display.textContent += button.textContent;
+        }
+    })
+})
 
 
